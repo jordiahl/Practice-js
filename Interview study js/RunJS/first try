@@ -1,0 +1,265 @@
+'use strict'
+
+let random = Math.random(0,1)*10;
+
+
+let word = random < 5 ? "less than 5": "more than five"
+
+let obj = {
+  [word]: random
+}
+
+console.log(obj[word])
+console.log(obj[word])
+
+Object.keys({}).length
+
+let user = {['hello']: 'hello'}
+console.log(user.yolo )
+
+user.yolo? "yolo": "!!!yolo"
+
+let hello = 'hello';
+
+hello in user
+
+
+const admin = user
+
+user = null;
+admin
+
+
+user = {
+  name: "jordi"
+}
+
+user.f = function () {
+  console.log(this.name)
+  let thi  = () => {console.log(this.name)}
+  thi()
+}
+
+user.f()
+
+function User() {
+  if(new.target){
+  console.log("hello")  
+  }
+}
+
+// without "new":
+// User(); // undefined
+
+// with "new":
+new User(); // function User { ... }
+
+
+function BigUser() {
+
+  this.name = "John";
+
+  return { name: "Godzilla" };  // <-- returns this object
+}
+
+console.log( new BigUser().name );  
+const godzilla = new BigUser();
+console.log(godzilla.name)
+
+
+let id1 = Symbol("id");
+let id2 = Symbol("id");
+console.log(id1.toString())
+console.log(id1.description)
+
+user[id1] = "hello";
+user[id1]
+
+Object.keys(user);
+
+// read from the global registry
+let id = Symbol.for("id"); // if the symbol did not exist, it is created
+
+// read it again (maybe from another part of the code)
+let idAgain = Symbol.for("id");
+
+id.description
+
+// the same symbol
+console.log( id === idAgain ); // true
+
+
+const prim = {
+  name: "Jord",
+  
+  toString(){
+    return this.name
+  },
+  
+  valueOf(){
+    return 10
+  }
+}
+
+const what = "";
+what.concat(prim, "hey") 
+prim + "hello"
+console.log("hello"+ prim)
+
+
+Infinity >Number.MAX_SAFE_INTEGER
+
+const number = 0/20
+isNaN("0b1111")
+
+60..toString(2)
+"hello".toUpperCase()
+
+
+const arr = [1,8,70,4,5,6]
+
+Math.max(...arr)
+
+0x5a
+
+'Österreich'.localeCompare('Zealand')
+
+
+const ar = [1,2,3,4,5,6,7]
+
+ar.shift();
+ar
+ar["5"]
+
+for (let h of "hello"){
+  console.log (h)
+}
+
+for (let a of ar){
+  console.log(a)
+}
+
+"hello".slice(1, 3)
+
+ar
+const splic =ar.splice(1,4, 80,90,100)
+ar;
+splic;
+
+["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+  console.log(`${item} is at index ${index} in ${array}`);
+});
+let i =0;
+ar
+const yolo = ar.sort((a, b) => {
+  console.log(`i:${i} a:${a}  b:${b} a-b: ${a-b}`);
+  i++;
+  return a-b;
+});
+ar
+
+
+console.log(typeof {}); // object
+console.log(typeof []);
+
+Object.keys({}).length;
+
+function fakeCounter(){
+  let count = 0;
+  return count++;
+}
+
+counter = fakeCounter();
+console.log(counter);
+console.log(counter);
+console.log(fakeCounter());
+console.log(fakeCounter());
+
+const darkness = {hello: "hello", its:"its"};
+darkness
+const me = {...darkness, its:"me"}
+me
+
+//Closure 
+//Inner lexical environment  -> access to outer object -> access to outer object, all the way to //global
+
+const alteredCounter = () => {
+  let count = 0;
+  return (c) => {
+    return c != undefined? ++c : ++count;
+  }
+}
+
+let c = 0;
+const aC = alteredCounter();
+console.log(aC())
+console.log(aC(2))
+
+function f() {
+  let value = Math.random();
+
+  return function() { console.log(value)};
+}
+
+// 3 functions in array, every one of them links to Lexical Environment
+// from the corresponding f() run
+let arr1 = [f(), f(), f()];
+arr1[0]()
+
+//Currying
+let sum = (a) => {
+  return (b) => {
+    if(b == undefined){
+      return a;
+    }
+    let current = a + b;
+    return sum(current); 
+  }  
+}
+
+console.log(sum(1)(2)(3)())
+
+function sum1(a) {
+
+  let currentSum = a;
+
+  function f(b) {
+    currentSum += b;
+    return f;
+  }
+  
+  f.valueOf = () => currentSum;
+
+  f.toString = () => currentSum;
+
+  return f;
+}
+
+console.log(+sum1(1)(2)(3));
+
+//Arguments-------------------------------------------------------------
+
+const fooo = function (a){
+  console.log(arguments[0])
+}
+
+fooo(1);
+
+//Binding----------------------------------------------------------------
+
+user = {
+  firstName: "John"
+};
+
+function func(phrase) {
+  console.log(phrase + ', ' + this.firstName);
+}
+
+// bind this to user
+let funcUser = func.bind(user);
+
+funcUser("Hello");
+
+
+const slc = [1,2,3,4];
+slc.slice(0, 8)
