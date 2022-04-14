@@ -13,4 +13,4 @@ The `practice` folder is self explanatory
 
 ## Learn More about me 
 
-Go to `https://jordihernandezlage.com/`
+Go to https://jordihernandezlage.com/
