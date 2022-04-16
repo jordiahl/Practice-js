@@ -49,9 +49,9 @@ const listenB = () => {
     b.addEventListener('click', (e) =>{
         console.log('capture was stopped')
         //Gets child target
-        console.log(e.target);
+        console.log('target ',e.target);
         //Gets target for the element to which the event handler was attacahed to 
-        console.log(e.currentTarget);
+        console.log('current target ',e.currentTarget);
         //!!!Prevents the propagation,and since it is capturing the following event will not trigger
         //!!! If it was bubbling then the event at the top would not trigger
         e.stopPropagation()
