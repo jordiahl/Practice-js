@@ -1,0 +1,12 @@
+.loadbarContainer{
+    border: 1px solid black;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+.percentageIndicator{
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
