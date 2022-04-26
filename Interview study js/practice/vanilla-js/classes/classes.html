@@ -1,0 +1,73 @@
+<html>
+  <style>
+    :root {
+      --li-height: 20px;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      column-gap: 20px;
+    }
+    .title-container{
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+    }
+    .listWrapper {
+      padding: 0;
+    }
+
+    .listWrapper > li {
+      list-style-type: none;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 5px;
+      column-gap: 5px;
+      justify-content: space-between;
+    }
+
+    .listWrapper > li > div {
+      display: flex;
+      align-items: center;
+      padding: 5px 5px 5px 5px;
+      height: var(--li-height);
+    }
+
+    .circle {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      /* background-color: green; */
+      margin-right: 1rem;
+    }
+
+    .green{
+      background-color: green;
+    }
+
+    .red{
+      background-color: red;
+    }
+
+    .yellow{
+      background-color: yellow;
+    }
+
+    .grey{
+        background-color: grey;
+    }
+
+    .right-flag {
+      background-color: green;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      height: var(--li-height);
+      width: 3px;
+    }
+  </style>
+  <script src="./service.js"></script>
+  <script src="./classes.js" defer></script>
+</html>

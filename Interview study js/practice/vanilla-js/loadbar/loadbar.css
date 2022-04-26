@@ -1,0 +1,25 @@
+:root{
+    --borderRadius : 5px;
+}
+
+.loadBarContainer{
+    width: 100%;
+    height: 30px;
+    background-color: grey;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: var(--borderRadius);
+}
+
+.loadBarContent{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+
+.loadBar{
+    height: 100%;
+    border-radius: var(--borderRadius);
+    /* width: 50%; */
+    background-color: red;
+}

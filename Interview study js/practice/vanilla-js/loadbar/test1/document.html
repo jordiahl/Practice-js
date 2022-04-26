@@ -1,0 +1,33 @@
+<html>
+  <style>
+    :root{
+        --borderRadius: 5px;
+    }  
+
+    .documentContainer{
+        width: 400px;
+    }
+
+    .loadBarContainer {
+      width: 100%;
+      background-color: grey;
+      position: relative;
+      height: 30px;
+      margin-bottom: 10px;
+      border-radius: var(--borderRadius);
+    }
+    .loadBar {
+      background-color: greenyellow;
+      height: 100%;
+      border-radius: var(--borderRadius);
+    }
+
+    .percentage {
+      position: absolute;
+      left: 50%;
+      top: 5px;
+    }
+  </style>
+
+  <script src="./loadbar.js" defer></script>
+</html>
