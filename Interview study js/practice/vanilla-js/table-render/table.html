@@ -1,0 +1,35 @@
+<html>
+  <style>
+    :root {
+      --bar-height: 20px;
+    }
+    .container {
+    }
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 100px;
+    }
+
+    .load-bar-container{
+        margin: 20px 0;
+        height: var(--bar-height);
+        background-color: grey;
+
+    }
+
+    .loadBar {
+        width: 0%;
+        height: var(--bar-height);
+        background-color: greenyellow;
+    }
+
+    .load{
+        width: 100%;
+        transition: width 1s ease-in;
+    }
+
+  </style>
+
+  <script src="./table.js" defer></script>
+</html>

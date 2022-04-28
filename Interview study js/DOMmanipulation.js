@@ -39,3 +39,13 @@ const child = [...element.children];
 const cN = [...currEl.childNodes];
 const onlyElement = [...currEl.childNodes].filter((el) => el.nodeName != "#text");
 
+//remove element
+element.remove();
+const children = [...tableContainer.children];
+children.forEach((c) => c.remove());
+
+//add class
+element.classList.add("class-1");
+
+//toggles class
+element.classList.toggle('class')
