@@ -33,8 +33,10 @@ const onChange = (element, fn) => {
 };
 
 const onClick = (element, fn) => {
-    element.addEventListener('click', (event)=> {fn(event)})
-}
+  element.addEventListener("click", (event) => {
+    fn(event);
+  });
+};
 
 let columnNumber, rowNumber, table, tableContainer;
 
@@ -96,21 +98,30 @@ const createInputs = () => {
   return inputContainer;
 };
 
+let percent = 0;
+
 window.onload = () => {
   const root = createElement("div", { class: "container" });
   document.body.append(root);
   const inputContainer = createInputs();
   tableContainer = createElement("div");
 
-  const loadBarContainer = createElement("div", { class: "load-bar-container" });
+  const loadBarContainer = createElement("div", {
+    class: "load-bar-container",
+  });
   const bar = createElement("div", { class: "loadBar" });
   loadBarContainer.append(bar);
 
-  const button = createElement('button', {'type': 'button'}, 'start bar loading pure css');
-  
+  const button = createElement(
+    "button",
+    { type: "button" },
+    "start bar loading pure css"
+  );
+
   onClick(button, () => {
-      bar.classList.toggle('load')
-  })
-  
+    percent += 1;
+    bar.style.width = `${percent}0%`;
+  });
+
   root.append(inputContainer, tableContainer, loadBarContainer, button);
 };

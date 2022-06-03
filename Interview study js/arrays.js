@@ -34,3 +34,9 @@ console.log({ reduce }); //{ reduce: 36 }
 //!! doesn't mutate the array
 const find = ar.find((v) => v > 4);
 console.log({ find }); // {find: 5}
+
+// Create two dimensional array
+const newAr = new Array(5).fill(null).map(v => new Array(5).fill(nulls));
+
+//joins the elements of an array with a certain character
+ar.join(',') //"1,2,3,4" 

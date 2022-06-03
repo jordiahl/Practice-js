@@ -39,6 +39,12 @@ const child = [...element.children];
 const cN = [...currEl.childNodes];
 const onlyElement = [...currEl.childNodes].filter((el) => el.nodeName != "#text");
 
+//get first child
+element.firstChild;
+
+//insert before x element => (/*element to insert*/, /*child reference*/)
+element.insertBefore(node ,element.firstChild)
+
 //remove element
 element.remove();
 const children = [...tableContainer.children];
@@ -49,3 +55,15 @@ element.classList.add("class-1");
 
 //toggles class
 element.classList.toggle('class')
+
+//remove class
+element.classList.remove('class');
+
+//element tag name
+element.localName // if <div></div> => outputs 'div', if <button></button> => outputs 'button'
+
+// cool console log -> %c is setting the css written
+console.log(
+  "%cred",
+  "background:linear-gradient(#E66465,#9198E5); padding:20px"
+);

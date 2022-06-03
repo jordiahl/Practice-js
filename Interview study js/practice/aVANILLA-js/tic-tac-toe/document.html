@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            .game-container{
+                display: flex;
+                flex-direction: column;
+            }
+            .row{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .cell{
+                height: 50px;
+                width: 50px;
+                padding: 10px;
+                margin: 0;
+            }
+            .cell:disabled{
+                background-color: red;
+                color: white;
+            }
+            .game-over-banner{
+                display: none;
+            }
+        </style>
+
+        <script src="./tic-tac-toe.js"></script>
+    </head>
+
+    <body>
+        
+        <h1 class="game-over-banner">Game over player  </h1>
+
+
+    </body>
+</html>

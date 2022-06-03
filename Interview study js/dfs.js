@@ -1,5 +1,7 @@
 "use-strict"
 
+console.log('hello wolrd');
+
 const createElement = (el, attr, innerHTML) => {
     const element = document.createElement(el);
 
